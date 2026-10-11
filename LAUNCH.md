@@ -1,6 +1,6 @@
 # Launching the SY Consulting website
 
-The site is complete and ready to go online. It's a plain website with no server or database to manage. Hosting is free, and the only cost is the domain.
+The site is live for free at **https://sai-code-glitch.github.io/sy-consulting/**, hosted by GitHub Pages from the `gh-pages` branch of https://github.com/Sai-code-glitch/sy-consulting. There's no server or database to manage, and nothing to pay.
 
 ## 1. Your details (done)
 
@@ -22,7 +22,7 @@ Until it's activated, or if sending fails, the form offers the student a "Send o
 
 The booking calendar is built into the site, with no Calendly account needed. Students pick a day and time, and the slot arrives in the enquiry email. Times are shown in Eastern Time, plus the student's own local time. The student also gets an "Add to Google Calendar" button.
 
-- Your booking link is your website address followed by `#book`, e.g. `https://syconsulting.com/#book`. Share it on WhatsApp, Instagram and email.
+- Your booking link is https://sai-code-glitch.github.io/sy-consulting/#book. Share it on WhatsApp, Instagram and email.
 - To change your available days or hours, edit `calendar` in `js/config.js`. Each enquiry is a request, so reply on WhatsApp or email to confirm the slot. Two students can pick the same time; if that happens, offer the second one another slot.
 
 If you'd rather have automatic double-booking protection later, create a free Calendly event and paste its link into `bookingUrl`.
@@ -40,19 +40,21 @@ Students in India can pay with international cards through Stripe. If you have a
 
 Simpler option: a PayPal.me link (`https://paypal.me/yourname`) also works as `paymentUrl`.
 
-## 5. Buy a domain
+## 5. Updating the site
 
-Register a name such as `syconsulting.com` on Namecheap, Cloudflare, GoDaddy or Squarespace Domains. A `.com` costs roughly $10 to $20 a year.
+The live site is served from the **`gh-pages`** branch. To change something, such as prices or the payment link:
 
-Then replace `YOUR-DOMAIN` in `robots.txt` and `sitemap.xml` with your domain.
+1. Open https://github.com/Sai-code-glitch/sy-consulting, switch the branch selector to `gh-pages`, and open the file (for example `js/config.js`).
+2. Click the pencil icon, make the change, and press **Commit changes**.
+3. The live site updates within a minute or two.
 
-## 6. Put it online: Netlify (free)
+## 6. Optional later: your own domain
 
-1. Sign up at https://app.netlify.com.
-2. Choose **Add new site → Deploy manually**, then drag the whole `sy-consulting-site` folder onto the page. The site is live within seconds at a `*.netlify.app` address.
-3. Go to **Domain management → Add a domain**, enter your domain, and follow the steps to point it at Netlify. HTTPS is set up for you automatically.
+When you want an address like `syconsulting.com` (about $10 to $20 a year from Namecheap, Cloudflare or GoDaddy):
 
-To update the site later, edit the files and drag the folder in again.
+1. In the repository, go to **Settings → Pages → Custom domain**, enter the domain and save.
+2. At your domain provider, add a `CNAME` record for `www` pointing to `sai-code-glitch.github.io`, and the four GitHub `A` records for the bare domain listed on GitHub's "Managing a custom domain" help page.
+3. Tick **Enforce HTTPS** once it becomes available, then replace the github.io address in `robots.txt`, `sitemap.xml` and `index.html` with your domain.
 
 ## 7. After launch
 
